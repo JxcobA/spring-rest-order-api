@@ -27,7 +27,37 @@ pipeline{
             sh 'echo "======Building Java Application completed====="'
           
         }
+
+         stage('testing the application'){
+          steps{
+            sh 'echo "========Testing Java Application============"'
+            sh '''
+                 mvn test
+              '''
+            sh 'echo "======Testing Java Application completed====="'
+        
+         }
+
+        stage('packaging the application'){
+          steps{
+            sh 'echo "========Packaging Java Application============"'
+            sh '''
+                 mvn clean package
+              '''
+            sh 'echo "======Packaging Java Application completed====="'
+        
+         }
       }
+
+        stage('creating the application'){
+          steps{
+            sh 'echo "========Creating Java Application============"'
+            // sh '''
+            //      mvn clean package
+            //   '''
+            sh 'echo "======Creating Java Application completed====="'
+        
+         }
  
   }
 }
