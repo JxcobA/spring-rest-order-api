@@ -1,6 +1,6 @@
 FROM openjdk:26-ea-trixie
  
-COPY target/order-management-0.0.1-SNAPSHOT.jar
+COPY target/order-management-0.0.1-SNAPSHOT.jar app.jar
  
 EXPOSE 9000
  
