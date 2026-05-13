@@ -5,13 +5,9 @@ pipeline{
   tools {
     // '<name of tool>' given in the manage jenkins > Tools > Maven Installation
     maven 'Maven 3.9'
+    jdk 'jdk_17'
  }
 
-  environment {
-    JAVA_HOME = '/usr/lib/jvm/java-21-openjdk-amd64'   //  force JDK 21 to be used
-    PATH = "${JAVA_HOME}/bin:${env.PATH}"
-  }
-  
   stages{
       stage ('Verify versions'){
         steps {
@@ -26,12 +22,7 @@ pipeline{
         steps{
             sh 'echo "========Building Java Application============"'
             sh '''
-              export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-              export PATH=$JAVA_HOME/bin:$PATH
-              echo "JAVA_HOME = $JAVA_HOME"
-               java -version
-               mvn -v
-               mvn clean compile
+                 mvn clean compile
               '''
             sh 'echo "======Building Java Application completed====="'
           
