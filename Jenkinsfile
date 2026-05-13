@@ -25,7 +25,14 @@ pipeline{
       stage('building the application'){
         steps{
             sh 'echo "========Building Java Application============"'
-            sh 'mvn clean compile'
+            sh '''
+              export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+              export PATH=$JAVA_HOME/bin:$PATH
+              echo "JAVA_HOME = $JAVA_HOME"
+               java -version
+               mvn -v
+               mvn clean compile
+              '''
             sh 'echo "======Building Java Application completed====="'
           
         }
