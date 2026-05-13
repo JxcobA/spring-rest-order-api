@@ -4,8 +4,8 @@ pipeline{
   
   tools {
     // '<name of tool>' given in the manage jenkins > Tools > Maven Installation
-    maven 'Maven 3.9'
-    jdk 'jdk_17'
+    maven 'Maven 3.9.15'
+    jdk 'JDK 17'
  }
 
   stages{
