@@ -22,7 +22,7 @@ pipeline {
       steps {
         sh 'echo "========Building Java Application============"'
         sh 'mvn clean compile'
-        sh 'echo "======Building Java Application completed====="'
+        sh 'echo "======Building Java Application Completed====="'
       }
     }
 
@@ -30,7 +30,7 @@ pipeline {
       steps {
         sh 'echo "========Testing Java Application============"'
         sh 'mvn test'
-        sh 'echo "======Testing Java Application completed====="'
+        sh 'echo "======Testing Java Application Completed====="'
       }
     }
 
@@ -38,14 +38,14 @@ pipeline {
       steps {
         sh 'echo "========Packaging Java Application============"'
         sh 'mvn clean package'
-        sh 'echo "======Packaging Java Application completed====="'
+        sh 'echo "======Packaging Java Application Completed====="'
       }
     }
 
     stage('Create') {
       steps {
-        sh 'echo "========Creating Java Application============"'
-        sh 'echo "======Creating Java Application completed====="'
+        sh 'echo "========Creating Docker Image============"'
+        sh 'echo "======Creating Docker Image Completed====="'
       }
     }
 
